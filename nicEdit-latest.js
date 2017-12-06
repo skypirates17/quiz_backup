@@ -433,7 +433,7 @@ var nicEditor = bkClass.extend({
 	panelInstance: function(B, C) {
 		B = this.checkReplace($BK(B));
 		var A = new bkElement("DIV").setStyle({
-			width: (parseInt(B.getStyle("width")) || B.clientWidth) + "px"
+			width: "100%"//(parseInt(B.getStyle("width")) || B.clientWidth) + "px"
 		}).appendBefore(B);
 		this.setPanel(A);
 		return this.addInstance(B, C)
@@ -526,7 +526,7 @@ var nicEditorInstance = bkClass.extend({
 		if (H || this.options.hasPanel) {
 			var B = (bkLib.isMSIE && !((typeof document.body.style.maxHeight != "undefined") && document.compatMode == "CSS1Compat"));
 			var E = {
-				width: newX + "px",
+				width: "100%",//newX + "px",
 				border: "1px solid #ccc",
 				borderTop: 0,
 				overflowY: "auto",
@@ -535,7 +535,7 @@ var nicEditorInstance = bkClass.extend({
 			E[(B) ? "height" : "maxHeight"] = (this.ne.options.maxHeight) ? this.ne.options.maxHeight + "px" : null;
 			this.editorContain = new bkElement("DIV").setStyle(E).appendBefore(G);
 			var A = new bkElement("DIV").setStyle({
-				width: (newX - 8) + "px",
+				width: "99%",//(newX - 8) + "px",
 				margin: "4px",
 				minHeight: newY + "px"
 			}).addClass("main").appendTo(this.editorContain);
